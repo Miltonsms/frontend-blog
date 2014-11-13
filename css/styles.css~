@@ -14,7 +14,7 @@ div.parte1{
 	margin:0px;
 }
 div#par1{
-	margin: 0px 50px 0px 0px;
+	margin: 0px 0px 0px 50px;
 	float:right;
 
 }
