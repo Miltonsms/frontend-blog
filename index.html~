@@ -37,7 +37,7 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 	<div class="parte1">
 	 <div id = "pa1">
 		<p>Cognits Blog</p>
-		
+		</div>
 		<div id = "par1">
 			<p>Home</p>
 		</div>
