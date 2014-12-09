@@ -1,6 +1,6 @@
 // Javascript Code.
 $(document).ready(function(){
-    $("#div1").load("_posts/2014-11-09-cognits-frontend-blog.md");
+    $("#div1").load("_posts/paradimas.md");
   });
 
 $(document).ready(function(){
@@ -21,7 +21,7 @@ $(document).ready(function(){ $('#alternar-respuesta-ej5').toggle( function(e){ 
 //posts 2
 
 $(document).ready(function(){
-    $("#div2").load("_posts/segundo.md");
+    $("#div2").load("_posts/valores.md");
   });
 
 $(document).ready(function(){
@@ -39,23 +39,3 @@ $(document).ready(function(){
 // boton2
 $(document).ready(function(){ $('#boton2').toggle( function(e){ $('#p2').slideDown();$(this).text('Ocultar respuesta');e.preventDefault();},function(e){ $('#p2').slideUp();$(this).text('Ver respuesta');e.preventDefault();});});
 
-//posts 3
-
-$(document).ready(function(){
-    $("#div3").load("_posts/segundo.md");
-  });
-
-$(document).ready(function(){
-    $('#butt').click(function(){
-        var toAdd = $('input[name=checkListIt]').val();
-        $('.li').append('<div class="item">' + toAdd + '</div>');
-        var toAdd = $('input[name=comentar]').val();
-        $('.li').append('<div class="item">' + toAdd + '</div>');
-    });
-    
-    $(document).on("click", ".item", function() {
-    $(this).remove();
-    });
-});
-// boton3
-$(document).ready(function(){ $('#boton3').toggle( function(e){ $('#p3').slideDown();$(this).text('Ocultar respuesta');e.preventDefault();},function(e){ $('#p3').slideUp();$(this).text('Ver respuesta');e.preventDefault();});});

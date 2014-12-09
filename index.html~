@@ -12,7 +12,7 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
     <meta name="author" content="">
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <title>Cognits Blog</title>
@@ -31,8 +31,27 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+<style>
+.resaltar{background-color:#FF0;}
+</style> 
+  <script type='text/javascript' >
+    $.expr[':'].icontains = function(obj, index, meta, stack){
+    return (obj.textContent || obj.innerText || jQuery(obj).text() || '').toLowerCase().indexOf(meta[3].toLowerCase()) >= 0;
+    };
+    $(document).ready(function(){   
+        $('#buscador').keyup(function(){
+                     buscar = $(this).val();
+                     $('#p tr').removeClass('resaltar');
+                            if(jQuery.trim(buscar) != ''){
+                               $("#p tr:icontains('" + buscar + "')").addClass('resaltar');
+                            }
+            });
+    });   
+ </script> 
 </head>
 
+<p>Buscar  »<input name="buscador" id="buscador" type="text" /></p>
   <body>
 	<div class="parte1">
 	 <div id = "pa1">
@@ -50,43 +69,108 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 	<div class="parte2">
 		<div class="contenido">
 			<h1>Cognists Blog</h1>
-			<p>El proyecto para que aprendan a usar GTML,CSS,Javascrip</p>
+			<p>El proyecto para que aprendan a usar HTML,CSS,Javascrip</p>
 		</div>
 	</div>
 	<div class="cuerpo">
 		<div class = "i">
 	<marquee  scrolldelay="1" scrollamount="2" direction="up" loop="infinite" onmouseout="this.start()" onmouseover="this.stop()"width="100%" height="100%">
+			<!-- posts 1 -->
 			<div id ="posts1">
-				<h1 class="color">Man must explore, and this is exploration at its greatest</h1>
-				<h3 class="color">problems look mighty small from 150 miles up</h3>
-				<p>Posted by Cognists student, Noviembre  10,2014</p>
-				<a href="file:///home/hp/Escritorio/proyecto-git/frontend-blog/parte1.html" target="_blank"><button>Leer todo</button></a>		
+				<h1 class="color">El dolor y el placer </h1>
+				<h3 class="color">como podemos contralar estas dos cosas que rigen nuestra vida </h3>
+				<p>Por: Milotn Ramirez</p>
+				<p><a href="#" id="alternar-respuesta-ej5" style="display:inline-block;background-color:#45505B;color:#fff;text-decoration:none;padding:10px 30px;margin:0 0 30px;font-size:1.3em;">Ver respuesta</a></p>		
 			</div>
 			<br>
 			<br>
 			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<!-- posts 2 -->
 			<div class ="posts2">
-				<h1 class="color">Segundo post sobre algo interesante </h1>
-				<h3 class="color">para que a </h3>
-				<p>Posted by Cognits stadent, Noviembre 12,2014</p>
-				<button>Leer todo</button>
+				<h1 class="color">los valores en nuestra vida</h1>
+				<h3 class="color">como saber cuales son nustros valores</h3>
+				<p>Por: Milon Ramirez</p>
+				<p><a href="#" id="boton2" style="display:inline-block;background-color:#45505B;color:#fff;text-decoration:none;padding:10px 30px;margin:0 0 30px;font-size:1.3em;">Ver respuesta</a></p>	
+			</div>
+			<!-- posts 3 -->
+			<br>
+			<br>
+			<br>
+			<div id ="posts1">
+				<h1 class="color">El dolor y el placer </h1>
+				<h3 class="color">como podemos contralar estas dos cosas que rigen nuestra vida </h3>
+				<p>Por: Milotn Ramirez</p>
+				<p><a href="#" id="alternar-respuesta-ej5" style="display:inline-block;background-color:#45505B;color:#fff;text-decoration:none;padding:10px 30px;margin:0 0 30px;font-size:1.3em;">Ver respuesta</a></p>		
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<!-- posts 2 -->
+			<div class ="posts2">
+				<h1 class="color">los valores en nuestra vida</h1>
+				<h3 class="color">como saber cuales son nustros valores</h3>
+				<p>Por: Milon Ramirez</p>
+				<p><a href="#" id="boton2" style="display:inline-block;background-color:#45505B;color:#fff;text-decoration:none;padding:10px 30px;margin:0 0 30px;font-size:1.3em;">Ver respuesta</a></p>	
 			</div>
 			</marquee>
 		</div>
+		
 		<div class="p">
-		<div id = "div1"></div>
-		<div>
-		<h2>Nombre</h2>
-		<form name="checkListForm">
-			<input type="text" name="checkListItem"/>
-		</form>
-		<h2>comentario</h2>
-			<input type="text" name="comentario"/>
-			<div id="button">comentar</div>
-		<br/>
-		<div class="list"></div></div>
+		<br>
+		<div id = "p1" style="display:none">
+		
+		<br>
+			<div id = "div1"></div>
+			<div id = "coment">
+			<h2>Nombre</h2>
+			<form name="checkListForm">
+				<input type="text" name="checkListItem"/>
+			</form>
+			<h2>comentario</h2>
+				<input type="text" name="comentario"/>
+				<div id="button">comentar</div>
+			<br/>
+			<div class="list"></div>
+			</div>
 		</div>
-
+		<!-- posts 2 -->
+		<div id = "p2" style="display:none">
+			<div id = "div2"></div>
+			<div id = "coment">
+			<h2>Nombre</h2>
+			<form name="checkListForm">
+				<input type="text" name="checkListIte"/>
+			</form>
+			<h2>comentario</h2>
+				<input type="text" name="comentari"/>
+				<div id="butto">comentar</div>
+			<br/>
+			<div class="lis"></div>
+			</div>
+		</div>
+		<!-- posts 3 -->
+		<div id = "p3" style="display:none">
+			<div id = "div3"></div>
+			<div id = "coment">
+			<h2>Nombre</h2>
+			<form name="checkListFor">
+				<input type="text" name="checkListIt"/>
+			</form>
+			<h2>comentario</h2>
+				<input type="text" name="comentar"/>
+				<div id="butt">comentar</div>
+			<br/>
+			<div class="li"></div>
+			</div>
+		</div>
 	</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
